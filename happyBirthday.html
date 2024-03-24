@@ -24,7 +24,7 @@
 
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-image: linear-gradient(to right, #3f5efb, #fc466b); /* Gradient direction and colors */
+            background-image: linear-gradient(to right, #3f5efb, #fc466b);
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -54,16 +54,110 @@
         }
 
         button:hover {
-          background-image: linear-gradient(90deg, #fb3f89, #3f5efb)
+          background-image: linear-gradient(90deg, #fb3f89, #3f5efb);
         }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+    .modal-content {
+        width: 90%; /* Make modal smaller on smaller screens */
+        margin: 10% auto; /* Adjust margin to bring modal more central */
+    }
+
+    .message, p {
+        font-size: 20px; /* Smaller text on smaller screens */
+        padding: 0 10px; /* Add some padding so text doesn't touch the edges */
+    }
+
+    button {
+        font-size: 18px; /* Slightly smaller buttons on smaller screens */
+        padding: 10px 15px; /* Adjust padding */
+    }
+
+    .close {
+        font-size: 24px; /* Smaller close button */
+    }
+}
 
 
     </style>
 </head>
 <body>
-    <div class="message">Happy Birthday Nadine, we love you so much.
+    <div class="message">Happy Birthday Nadine, we love you so much.</div>
+    <p>As you enter this year of hotness we thought you needed something to cool down with</p>
+    <!-- Updated this button to just open the modal -->
+    <button id="myBtn">Click Me</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="gift_card.jpg" alt="Gift Card" style="max-width:100%;">
+        <p>Check out these cool <a href="https://afanof.eu/en/product-category/fans/" target="_blank">fans!</a></p>
       </div>
-      <p> As you enter this year of hottness we thought you needed something to cool down with</p>
-    <button onclick="window.open('gift_card.jpg')">Click Me</button>
-  </body>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
 </html>
