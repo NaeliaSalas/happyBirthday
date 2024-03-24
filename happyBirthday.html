@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday Nadine</title>
+    <style>
+        @keyframes rainbowText {
+            0%,100% {
+                filter: hue-rotate(0deg);
+            }
+            50% {
+                filter: hue-rotate(-360deg);
+            }
+        }
+
+        @keyframes bouncing {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-image: linear-gradient(to right, #3f5efb, #fc466b); /* Gradient direction and colors */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .message {
+            font-size: 40px;
+            color: #7757cb;
+            animation: rainbowText 10s linear infinite, bouncing 2s ease-in-out infinite;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        button {
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background-image: linear-gradient(90deg, #3f5efb, #fb3f89);
+            color: white;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px #000000;
+            animation: bouncing 2s ease-in-out infinite;
+        }
+
+        button:hover {
+          background-image: linear-gradient(90deg, #fb3f89, #3f5efb)
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="message">Happy Birthday Nadine, we love you so much.
+      </div>
+      <p> As you enter this year of hottness we thought you needed something to cool down with</p>
+    <button onclick="window.open('gift_card.jpg')">Click Me</button>
+  </body>
+</html>
