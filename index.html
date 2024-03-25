@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet"> <!-- Google Font -->
     <title>Happy Birthday Nadine</title>
     <style>
         @keyframes rainbowText {
@@ -58,38 +59,34 @@
           background-image: linear-gradient(90deg, #fb3f89, #3f5efb);
         }
 
-        /* Modal styles */
         .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
+            display: none;
+            position: fixed;
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-            display: flex; /* Enable flexbox */
-            align-items: center; /* Vertical centering */
-            justify-content: center; /* Horizontal centering */
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-content {
             background-color: #fefefe;
-            margin: auto; /* Safe for older browsers, not strictly necessary with flexbox */
+            margin: auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%; /* You might adjust this or use max-width */
-            max-width: 500px; /* Adjust based on your content */
+            width: 80%;
+            max-width: 500px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-
 
         p {
             text-align: center;
             margin: 20px 0;
         }
-
 
         .close {
             color: #aaa;
@@ -104,7 +101,7 @@
             text-decoration: none;
             cursor: pointer;
         }
-        @media (max-width: 768px) {
+         @media (max-width: 768px) {
             .modal-content {
                 width: 95%;
                 margin: 10% auto;
@@ -130,6 +127,7 @@
     }
 
     body {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
         padding: 20px;
         box-sizing: border-box;
     }
@@ -140,7 +138,7 @@
 
     </style>
 </head>
-<body onload="startConfetti()">
+<body>
     <h2 class="message">Happy Birthday Nadine!!!</h2>
     <h1 class="message">We love you so much!</h1>
     <p class="message">As you enter this year of hotness we thought you needed something to cool down with</p>
@@ -152,12 +150,11 @@
             <p class="link-text">Check out these cool <a href="https://afanof.eu/en/product-category/fans/" target="_blank">fans!</a></p>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1/dist/confetti.min.js"></script>
     <script>
 
-        var modal = document.getElementById("myModal");
         var btn = document.getElementById("myBtn");
         var span = document.getElementsByClassName("close")[0];
+        var modal = document.getElementById("myModal");
 
         btn.onclick = function() {
             modal.style.display = "block";
