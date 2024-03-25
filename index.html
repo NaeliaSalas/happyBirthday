@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<body onload="startConfetti()"></body>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1/dist/confetti.min.js"></script>
+
     <title>Happy Birthday Nadine</title>
     <style>
         @keyframes rainbowText {
@@ -59,25 +63,36 @@
 
         /* Modal styles */
         .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
             left: 0;
             top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            display: flex; /* Enable flexbox */
+            align-items: center; /* Vertical centering */
+            justify-content: center; /* Horizontal centering */
         }
 
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto;
+            margin: auto; /* Safe for older browsers, not strictly necessary with flexbox */
             padding: 20px;
             border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
+            width: 80%; /* You might adjust this or use max-width */
+            max-width: 500px; /* Adjust based on your content */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
+
+
+        p {
+            text-align: center;
+            margin: 20px 0;
+        }
+
 
         .close {
             color: #aaa;
@@ -92,72 +107,103 @@
             text-decoration: none;
             cursor: pointer;
         }
-        @media (max-width: 600px) {
-    .modal-content {
-        width: 90%; /* Make modal smaller on smaller screens */
-        margin: 10% auto; /* Adjust margin to bring modal more central */
-    }
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
 
     .message, p {
-        font-size: 20px; /* Smaller text on smaller screens */
-        padding: 0 10px; /* Add some padding so text doesn't touch the edges */
+        font-size: 24px;
+        padding: 0 15px;
+        text-align: center;
     }
 
-    button {
-        font-size: 18px; /* Slightly smaller buttons on smaller screens */
-        padding: 10px 15px; /* Adjust padding */
+    body button {
+        font-size: 22px !important;
+        padding: 15px 30px !important;
+        background-color: #ff0000 !important;
+        color: #ffffff !important;
     }
 
     .close {
-        font-size: 24px; /* Smaller close button */
+        font-size: 30px;
+        top: 10px;
+        right: 10px;
+    }
+
+    body {
+        padding: 20px;
+        box-sizing: border-box;
     }
 }
 
 
+
+
     </style>
 </head>
-<body>
-    <div class="message">Happy Birthday Nadine, we love you so much.</div>
-    <p>As you enter this year of hotness we thought you needed something to cool down with</p>
-    <!-- Updated this button to just open the modal -->
+
+    <h2 class="message">Happy Birthday Nadine!!!</h2><br><h1 class="message"> We love you so much!</h1>
+    <p class="message">As you enter this year of hotness we thought you needed something to cool down with</p>
+
     <button id="myBtn">Click Me</button>
 
-    <!-- The Modal -->
     <div id="myModal" class="modal">
-      <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
         <img src="gift_card.jpg" alt="Gift Card" style="max-width:100%;">
-        <p>Check out these cool <a href="https://afanof.eu/en/product-category/fans/" target="_blank">fans!</a></p>
+        <p class="link-text">Check out these cool <a href="https://afanof.eu/en/product-category/fans/" target="_blank">fans!</a></p>
       </div>
     </div>
 
     <script>
-        // Get the modal
+        function startConfetti() {
+        var end = Date.now() + (15 * 1000); // Run for 15 seconds
+        var colors = ['#bb0000', '#ffffff', '#ff9900', '#f8f8f8', '#90ee90', '#ffb6c1', '#ffffe0', '#00ced1'];
+
+        (function frame() {
+            confetti({
+                particleCount: 7,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: colors
+            });
+            confetti({
+                particleCount: 7,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: colors
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        }());
+    }
         var modal = document.getElementById("myModal");
 
-        // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
 
-        // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
-        // When the user clicks the button, open the modal
         btn.onclick = function() {
             modal.style.display = "block";
         }
 
-        // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
             modal.style.display = "none";
         }
 
-        // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
+
     </script>
+
 </body>
 </html>
