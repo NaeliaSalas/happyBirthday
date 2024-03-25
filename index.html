@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<body onload="startConfetti()"></body>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1/dist/confetti.min.js"></script>
-
     <title>Happy Birthday Nadine</title>
     <style>
         @keyframes rainbowText {
@@ -143,50 +140,23 @@
 
     </style>
 </head>
-
-    <h2 class="message">Happy Birthday Nadine!!!</h2><br><h1 class="message"> We love you so much!</h1>
+<body onload="startConfetti()">
+    <h2 class="message">Happy Birthday Nadine!!!</h2>
+    <h1 class="message">We love you so much!</h1>
     <p class="message">As you enter this year of hotness we thought you needed something to cool down with</p>
-
     <button id="myBtn">Click Me</button>
-
     <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <img src="gift_card.jpg" alt="Gift Card" style="max-width:100%;">
-        <p class="link-text">Check out these cool <a href="https://afanof.eu/en/product-category/fans/" target="_blank">fans!</a></p>
-      </div>
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="gift_card.jpg" alt="Gift Card" style="max-width:100%;">
+            <p class="link-text">Check out these cool <a href="https://afanof.eu/en/product-category/fans/" target="_blank">fans!</a></p>
+        </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1/dist/confetti.min.js"></script>
     <script>
-        function startConfetti() {
-        var end = Date.now() + (15 * 1000); // Run for 15 seconds
-        var colors = ['#bb0000', '#ffffff', '#ff9900', '#f8f8f8', '#90ee90', '#ffb6c1', '#ffffe0', '#00ced1'];
 
-        (function frame() {
-            confetti({
-                particleCount: 7,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0 },
-                colors: colors
-            });
-            confetti({
-                particleCount: 7,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1 },
-                colors: colors
-            });
-
-            if (Date.now() < end) {
-                requestAnimationFrame(frame);
-            }
-        }());
-    }
         var modal = document.getElementById("myModal");
-
         var btn = document.getElementById("myBtn");
-
         var span = document.getElementsByClassName("close")[0];
 
         btn.onclick = function() {
@@ -202,8 +172,6 @@
                 modal.style.display = "none";
             }
         }
-
     </script>
-
 </body>
 </html>
