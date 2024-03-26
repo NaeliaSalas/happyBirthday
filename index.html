@@ -138,7 +138,7 @@
 <body>
     <h2 class="message">Happy Birthday Nadine!!!</h2>
     <h1 class="message">We love you so much!</h1>
-    <p class="message">As you enter this year of hotness we thought you needed something to cool down with</p>
+    <p class="message">As you enter this year of hotness we thought you needed something to cool down with.</p>
     <button id="myBtn">Click Me</button>
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -149,7 +149,7 @@
     </div>
 
     <script>
-    console.log("Page loaded and script executed"); // This will log when the page and script are initially loaded
+    console.log("Page loaded and script executed");
 
         var btn = document.getElementById("myBtn");
         var span = document.getElementsByClassName("close")[0];
@@ -158,25 +158,20 @@
 
 
         btn.onclick = function() {
-         modal.style.display = "flex"; // This line shows the modal
-             console.log("Modal opened");
+         modal.style.display = "flex";
         };
 
 
         span.onclick = function() {
             modal.style.display = "none";
-            console.log("Modal closed"); // This will log when the modal is closed
         };
 
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
-                console.log("Clicked outside, modal closed");
-                console.log(event);
 
             }
         };
-        console.log("Initial script execution, modal display should be 'none':", modal.style.display);
 
     </script>
 </body>
